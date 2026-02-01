@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leads Hunter | God Mode v10.2 (Stealth Desktop)</title>
+    <title>Leads Hunter | God Mode v10.3 (Stealth Desktop)</title>
     <!-- Preconnect para acelerar carregamento de fontes e scripts externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- FIREBASE COMPAT (MANTIDO) -->
+    <!-- FIREBASE COMPAT -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
@@ -37,7 +37,6 @@
             overflow: hidden; 
             height: 100vh;
             perspective: 1000px; 
-            /* GPU Rasterization Force */
             transform: translateZ(0);
         }
 
@@ -55,7 +54,6 @@
                 radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0,0,0,0.8) 100%);
             filter: blur(80px);
             mix-blend-mode: screen;
-            /* Will-change avisa o browser para preparar a GPU */
             will-change: transform, opacity;
             animation: nebulaDrift 20s infinite alternate ease-in-out;
         }
@@ -111,7 +109,6 @@
         }
         .hub-module:hover {
             transform: translateY(-5px);
-            /* Sombra otimizada */
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8);
         }
 
@@ -214,7 +211,7 @@
             <div class="text-center relative">
                 <div class="absolute inset-0 bg-yellow-500/10 blur-[120px] rounded-full animate-pulse"></div>
                 <h1 class="font-display text-8xl text-metallic tracking-[0.2em] font-black relative z-10" style="-webkit-text-stroke: 1px rgba(255,255,255,0.1);">LEADS HUNTER</h1>
-                <p class="font-code text-[10px] text-gray-400 mt-10 tracking-[1em] uppercase opacity-70">Architecture v10.2 Stealth</p>
+                <p class="font-code text-[10px] text-gray-400 mt-10 tracking-[1em] uppercase opacity-70">Architecture v10.3 Stealth</p>
                 <div class="loader-bar-container mx-auto"><div id="boot-bar" class="loader-bar"></div></div>
                 <div id="boot-status" class="font-code text-[9px] text-[#D4AF37] mt-6 uppercase tracking-widest">Descriptografando Sistemas...</div>
             </div>
@@ -273,11 +270,9 @@
             </div>
         </div>
 
-        <!-- 4. HUB SCREEN (GRID ESTRATÉGICO) -->
+        <!-- 4. HUB SCREEN -->
         <div id="hub-screen" class="screen z-20 overflow-y-auto custom-scroll">
             <div class="w-full max-w-[95rem] mx-auto p-8 flex flex-col h-full justify-center min-h-screen">
-                
-                <!-- Header -->
                 <header class="flex justify-between items-end mb-12 relative z-10 border-b border-white/5 pb-6">
                     <div>
                         <h2 class="font-display text-5xl text-white font-black tracking-tight uppercase">Command<br><span class="text-metallic">Deck</span></h2>
@@ -289,18 +284,14 @@
                     </div>
                 </header>
 
-                <!-- Tactical Grid -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 flex-1">
-                    
-                    <!-- COL 1: INTELLIGENCE (Width 3/12) -->
+                    <!-- INTELLIGENCE -->
                     <div class="lg:col-span-3 flex flex-col gap-6 group/col">
                         <div class="flex items-center gap-3 mb-1 opacity-50 group-hover/col:opacity-100 transition">
                             <div class="w-1.5 h-1.5 bg-purple-500 rounded-full shadow-[0_0_10px_#a855f7]"></div>
                             <span class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-400">Intelligence</span>
                             <div class="h-px bg-purple-500/30 flex-1"></div>
                         </div>
-                        
-                        <!-- Hunter -->
                         <div class="hub-module relative flex-1 glass-panel p-8 cursor-pointer border-l-2 border-l-yellow-500 hover:border-l-4 transition-all" onclick="window.Navigation.enterPortal('spider')">
                             <div class="absolute top-4 right-4 opacity-10"><i data-lucide="globe" class="w-20 h-20 text-yellow-500"></i></div>
                             <div class="relative z-10 h-full flex flex-col justify-between">
@@ -311,8 +302,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Extractor -->
                         <div class="hub-module relative flex-1 glass-panel p-8 cursor-pointer border-l-2 border-l-purple-500 hover:border-l-4 transition-all" onclick="window.Navigation.enterPortal('extractor')">
                             <div class="absolute top-4 right-4 opacity-10"><i data-lucide="database" class="w-20 h-20 text-purple-500"></i></div>
                             <div class="relative z-10 h-full flex flex-col justify-between">
@@ -325,20 +314,16 @@
                         </div>
                     </div>
 
-                    <!-- COL 2: OFFENSIVE (Width 6/12 - Central) -->
+                    <!-- OFFENSIVE -->
                     <div class="lg:col-span-6 flex flex-col gap-6 group/col">
                         <div class="flex items-center gap-3 mb-1 opacity-50 group-hover/col:opacity-100 transition">
                             <div class="h-px bg-green-500/30 flex-1"></div>
                             <span class="text-[10px] font-black uppercase tracking-[0.2em] text-green-400">Offensive Operations</span>
                             <div class="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e]"></div>
                         </div>
-
-                        <!-- Sender (Hero Card) -->
                         <div class="hub-module relative h-full glass-panel p-12 cursor-pointer border-t-4 border-t-green-500 flex flex-col justify-center group" onclick="window.Navigation.enterPortal('sender')">
-                            <!-- Background FX -->
                             <div class="absolute inset-0 bg-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                             <div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-5 group-hover:opacity-20 transition-opacity duration-500"><i data-lucide="send" class="w-96 h-96 text-green-500"></i></div>
-                            
                             <div class="relative z-10">
                                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full mb-6">
                                     <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
@@ -348,7 +333,6 @@
                                 <p class="text-sm text-gray-400 max-w-md leading-relaxed border-l-2 border-green-500/30 pl-6 mb-10">
                                     Motor de envio de alta velocidade com rotação de delay e sistema anti-ban integrado. O núcleo da sua operação de vendas.
                                 </p>
-                                
                                 <div class="flex items-center gap-4 group-hover:translate-x-2 transition-transform">
                                     <div class="w-14 h-14 bg-green-500 text-black rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.4)]">
                                         <i data-lucide="play" class="w-6 h-6 ml-1 fill-current"></i>
@@ -359,15 +343,13 @@
                         </div>
                     </div>
 
-                    <!-- COL 3: CORE (Width 3/12) -->
+                    <!-- CORE -->
                     <div class="lg:col-span-3 flex flex-col gap-6 group/col">
                         <div class="flex items-center gap-3 mb-1 opacity-50 group-hover/col:opacity-100 transition">
                             <div class="h-px bg-blue-500/30 flex-1"></div>
                             <span class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400">Core Systems</span>
                             <div class="w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
                         </div>
-
-                        <!-- Config -->
                         <div class="hub-module relative flex-[2] glass-panel p-8 cursor-pointer border-r-2 border-r-blue-500 hover:border-r-4 transition-all" onclick="window.Navigation.enterPortal('config')">
                             <div class="absolute bottom-4 right-4 opacity-10"><i data-lucide="cpu" class="w-32 h-32 text-blue-500"></i></div>
                             <div class="relative z-10 h-full flex flex-col justify-between">
@@ -378,14 +360,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Logout -->
                         <div class="hub-module relative flex-1 glass-panel p-6 flex flex-col justify-center items-center text-center border border-red-500/20 hover:border-red-500/50 transition cursor-pointer group/logout hover:bg-red-950/10" onclick="window.AuthSystem.logout()">
                             <i data-lucide="power" class="w-6 h-6 text-red-500 mb-2 group-hover/logout:scale-125 transition-transform"></i>
                             <h4 class="text-xs font-black text-white uppercase tracking-widest">Encerrar</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -397,7 +376,7 @@
                 <span>VOLTAR AO DECK</span>
             </div>
 
-            <!-- TAB: CONFIG -->
+            <!-- TAB: CONFIG (WEBHOOK REMOVED AS REQUESTED) -->
             <div id="tab-config" class="tool-tab max-w-4xl mx-auto p-4 justify-center">
                 <div class="glass-panel p-16 border-t-4 border-t-blue-500">
                     <h2 class="text-4xl font-black text-white mb-10 flex items-center gap-5">
@@ -405,27 +384,23 @@
                     </h2>
                     <div class="space-y-8">
                         <div>
-                            <label class="text-[10px] uppercase text-blue-400 font-bold mb-3 block tracking-widest">Webhook N8N (Apenas IA)</label>
-                            <input type="text" id="conf-n8n" class="god-input w-full p-5 text-sm font-mono border-blue-500/30" placeholder="https://seu-n8n.com/webhook/..." >
-                        </div>
-                        <div>
                             <label class="text-[10px] uppercase text-blue-400 font-bold mb-3 block tracking-widest">Nome da Instância (Lock)</label>
                             <div class="flex items-center gap-4">
                                 <input type="text" id="conf-inst" class="god-input w-full p-5 text-sm font-mono border-blue-500/30" placeholder="NOME_DA_INSTANCIA">
                                 <i data-lucide="lock" id="lock-icon" class="hidden text-red-500 w-6 h-6"></i>
                             </div>
                             <p class="text-[10px] text-gray-500 mt-4 leading-relaxed border-l-2 border-blue-500/30 pl-4 py-1">
-                                A infraestrutura de API é gerenciada automaticamente pelo núcleo central para garantir segurança.
+                                O Webhook de IA e a infraestrutura de API são gerenciados globalmente para máxima segurança e estabilidade.
                             </p>
                         </div>
                         <button onclick="window.ConfigSystem.save()" class="btn-action w-full py-6 text-sm mt-4 shadow-blue-900/20 border border-blue-400/20">
-                            SINCRONIZAR
+                            SINCRONIZAR CORE
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB: SPIDER (MODIFICADO - LINKS DIRETOS) -->
+            <!-- TAB: SPIDER -->
             <div id="tab-spider" class="tool-tab max-w-6xl mx-auto p-4 pt-10">
                 <div class="glass-panel p-14 h-full flex flex-col border-t-4 border-t-[#D4AF37]">
                     <h2 class="text-4xl font-black text-white mb-10 uppercase tracking-widest flex items-center gap-4">
@@ -481,7 +456,7 @@
                 </div>
             </div>
 
-            <!-- TAB: SENDER (IA FEATURE ADDED) -->
+            <!-- TAB: SENDER -->
             <div id="tab-sender" class="tool-tab max-w-[90rem] mx-auto p-4 pt-5">
                 <div class="flex flex-col lg:flex-row gap-8 h-full">
                     <div class="flex-[2] glass-panel rounded-2xl flex flex-col p-10 border-t-4 border-t-green-600">
@@ -493,7 +468,6 @@
                             <div class="script-block relative">
                                 <div class="flex justify-between items-center mb-2">
                                     <span class="text-[9px] text-gray-500 uppercase font-black">Principal (Alpha)</span>
-                                    <!-- BOTÃO IA INTEGRADO AQUI -->
                                     <button onclick="window.AIAgent.optimize()" class="text-[9px] bg-blue-500/20 text-blue-400 px-3 py-1.5 rounded hover:bg-blue-500 hover:text-white transition flex items-center gap-2 border border-blue-500/30 font-bold tracking-wider">
                                         <i data-lucide="sparkles" class="w-3 h-3"></i> OTIMIZAR COM IA
                                     </button>
@@ -528,7 +502,7 @@
         </div>
     </div>
 
-    <!-- ADMIN TERMINAL (MANTIDO) -->
+    <!-- ADMIN TERMINAL -->
     <div id="admin-terminal" style="display:none;" class="fixed inset-0 bg-black/98 z-[10000] p-12 font-code backdrop-blur-2xl">
         <div class="max-w-6xl mx-auto border border-green-500/30 h-full flex flex-col p-12 rounded-3xl shadow-[0_0_100px_rgba(0,255,0,0.05)] bg-[#020502]">
             <div class="flex justify-between items-center border-b border-green-500/20 pb-8 mb-8">
@@ -539,7 +513,6 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
     <script>
         // --- DATA CORE ---
         const DataCore = {
@@ -572,9 +545,7 @@
             }
         };
 
-        // --- AUTH & SYSTEM WITH OBFUSCATED CONFIG ---
         const _0xcd2 = "eyJhcGlLZXkiOiJBSXphU3lDN21jTHJZZ0FQX0I1Q0RvOGZsdk9HazROMzhjN0dwSEUiLCJhdXRoRG9tYWluIjoibGVhZHMtaHVudGVyLTIuZmlyZWJhc2VhcHAuY29tIiwicHJvamVjdElkIjoibGVhZHMtaHVudGVyLTIiLCJzdG9yYWdlQnVja2V0IjoibGVhZHMtaHVudGVyLTIuZmlyZWJhc2VzdG9yYWdlLmFwcCIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiNTQ3MTA1Mzc2NzYyIiwiYXBwSWQiOiIxOjU0NzEwNTM3Njc2Mjp3ZWI6MWEyNWMwMWZiMDQzMmQyNDEyZmM0MyJ9";
-        
         let db; 
 
         window.Utils = { 
@@ -590,7 +561,6 @@
                 const cfg = window.Utils.decodeConfig();
                 firebase.initializeApp(cfg);
                 db = firebase.firestore();
-
                 let width = 0; const bar = document.getElementById('boot-bar');
                 const interval = setInterval(() => {
                     width += 2; bar.style.width = Math.min(width, 100) + '%';
@@ -630,22 +600,18 @@
             switchScreen: (id) => { 
                 const current = document.querySelector('.screen.active');
                 const target = document.getElementById(id);
-                
                 if (current) {
                     current.classList.remove('active');
                     current.classList.remove('enter-depth');
                     current.classList.add('exit-depth');
                     setTimeout(() => current.classList.remove('exit-depth'), 800);
                 }
-
                 target.classList.add('active'); 
                 target.classList.add('enter-depth');
-                
                 if(window.lucide) lucide.createIcons();
             },
             enterPortal: (tool) => { 
                 if (window.Navigation.isNavigating) return; 
-                
                 window.Navigation.switchScreen('tool-container'); 
                 document.querySelectorAll('.tool-tab').forEach(t=>t.classList.remove('active')); 
                 document.getElementById('tab-'+tool).classList.add('active'); 
@@ -654,97 +620,69 @@
                 if(window.lucide) lucide.createIcons();
             },
             exitPortal: () => window.Navigation.switchScreen('hub-screen'),
-            
             engageWarpDrive: () => {
                 if (window.Navigation.isNavigating) return;
                 window.Navigation.isNavigating = true;
-
                 const chatScreen = document.getElementById('intro-chat');
                 chatScreen.style.opacity = '0';
-                chatScreen.style.transition = 'opacity 0.5s ease-out';
-
-                if(window.StarfieldSystem) {
-                    window.StarfieldSystem.startWarp();
-                }
-
+                if(window.StarfieldSystem) window.StarfieldSystem.startWarp();
                 setTimeout(() => {
                     chatScreen.classList.remove('active'); 
                     chatScreen.style.display = 'none'; 
                     window.Navigation.switchScreen('hub-screen');
-                    
-                    if(window.StarfieldSystem) {
-                        window.StarfieldSystem.stopWarp();
-                    }
-                    
-                    setTimeout(() => {
-                        window.Navigation.isNavigating = false;
-                    }, 500);
+                    if(window.StarfieldSystem) window.StarfieldSystem.stopWarp();
+                    setTimeout(() => window.Navigation.isNavigating = false, 500);
                 }, 2500); 
             }
         };
 
-        // --- NOVO: HUNTER SEARCH (LINKS DIRETOS) ---
         window.SpiderTool = {
             search: () => {
                 const term = document.getElementById('searchTerm').value;
                 if(!term) return alert("Digite uma palavra-chave");
-
                 const cleanTerm = term.trim().replace(/\s+/g, '+');
                 const area = document.getElementById('spider-results');
-                
-                // Remove o placeholder e injeta os botões
                 document.getElementById('spider-placeholder').style.display = 'none';
-
                 area.innerHTML = `
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-4">
                         <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:border-yellow-500/50 hover:bg-white/10 transition-all cursor-pointer group" onclick="window.open('https://gruposwhats.app/search?q=${cleanTerm}', '_blank')">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-xl font-black text-white group-hover:text-yellow-500 transition">GruposWhats.app</h3>
-                                <i data-lucide="external-link" class="w-5 h-5 text-gray-500"></i>
-                            </div>
+                            <div class="flex items-center justify-between mb-4"><h3 class="text-xl font-black text-white group-hover:text-yellow-500 transition">GruposWhats.app</h3><i data-lucide="external-link" class="w-5 h-5 text-gray-500"></i></div>
                             <p class="text-xs text-gray-400 leading-relaxed font-mono">Clique para abrir a pesquisa direta neste diretório.</p>
                         </div>
-
                         <div class="p-8 border border-green-500/20 rounded-2xl bg-green-500/5 hover:bg-green-500/10 hover:border-green-500/40 transition-all cursor-pointer group" onclick="window.open('https://linkdegrupo.com.br/?s=${cleanTerm}', '_blank')">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-xl font-black text-green-400 group-hover:text-green-300 transition">LinkDeGrupo (Recomendado)</h3>
-                                <i data-lucide="external-link" class="w-5 h-5 text-green-700"></i>
-                            </div>
+                            <div class="flex items-center justify-between mb-4"><h3 class="text-xl font-black text-green-400 group-hover:text-green-300 transition">LinkDeGrupo (Recomendado)</h3><i data-lucide="external-link" class="w-5 h-5 text-green-700"></i></div>
                             <p class="text-xs text-gray-400 leading-relaxed font-mono">Melhores resultados geralmente. Clique para abrir.</p>
                         </div>
-                    </div>
-                `;
-                
+                    </div>`;
                 if(window.lucide) lucide.createIcons();
             }
         };
 
-        // --- NOVO: AI AGENT (INTEGRAÇÃO N8N) ---
+        // --- AIAgent: GET DIRECTLY FROM FIREBASE GLOBAL CONFIG ---
         window.AIAgent = {
             optimize: async () => {
                 const script = document.getElementById('script-area').value;
-                const n8n = localStorage.getItem('lh_n8n'); // Pega da config local
-                
                 if(!script) return alert("Digite um script base primeiro.");
-                if(!n8n) return alert("Configure o Webhook n8n na aba Configuração.");
-
                 const btn = document.querySelector('button[onclick="window.AIAgent.optimize()"]');
                 const originalHTML = btn.innerHTML;
-                
                 btn.innerHTML = `<i data-lucide="loader-2" class="w-3 h-3 animate-spin"></i> GERANDO...`;
                 if(window.lucide) lucide.createIcons();
 
                 try {
-                    const res = await fetch(n8n, {
+                    // BUSCA DIRETA NO FIREBASE PELO SETTING GLOBAL
+                    const globalDoc = await db.collection("settings").doc("global").get();
+                    if(!globalDoc.exists || !globalDoc.data().webhook) {
+                        throw new Error("Padrão de IA não configurado no servidor.");
+                    }
+                    const webhookUrl = globalDoc.data().webhook;
+
+                    const res = await fetch(webhookUrl, {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({ action: 'ai_script', prompt: script })
+                        body: JSON.stringify({ action: 'ai_script', prompt: script, user: window.AuthSystem.currentUser?.email })
                     });
                     const data = await res.json();
-                    
-                    if(data.text) {
-                        document.getElementById('script-area').value = data.text;
-                    }
+                    if(data.text) document.getElementById('script-area').value = data.text;
                 } catch(e) { 
                     alert("Erro na IA: " + e.message); 
                 } finally { 
@@ -754,12 +692,10 @@
             }
         };
 
-        // --- SENDER TOOL (MANTIDO CLIENT SIDE) ---
         window.SenderTool = {
             sessionCount: 0, sending: false,
             addScript: () => { 
-                const d = document.createElement('div'); 
-                d.className='script-block relative mt-4 group'; 
+                const d = document.createElement('div'); d.className='script-block relative mt-4 group'; 
                 d.innerHTML=`<textarea class="god-input w-full h-32 p-5 text-sm resize-none border-green-500/10 focus:border-green-500" placeholder="Variação..."></textarea><button onclick="this.parentElement.remove()" class="absolute top-2 right-2 p-2 text-red-500 hover:text-red-400 transition-colors opacity-50 group-hover:opacity-100"><i data-lucide="trash-2" class="w-4 h-4"></i></button>`; 
                 document.getElementById('scripts-container').appendChild(d);
                 if(window.lucide) lucide.createIcons();
@@ -783,12 +719,9 @@
                 let allLines = listArea.value.split('\n').filter(n => n.trim().length > 5);
                 if(!allLines.length) return alert("Lista de disparos vazia.");
                 let url, key, inst;
-                if(window.AuthSystem.currentUser && window.AuthSystem.currentUser.instanceLocked) {
-                    url = window.AuthSystem.currentUser.evo_url; key = window.AuthSystem.currentUser.evo_key; inst = window.AuthSystem.currentUser.instanceName;
-                } else {
-                    url = localStorage.getItem('evo_url'); key = localStorage.getItem('evo_key'); inst = localStorage.getItem('evo_inst');
-                }
-                if(!url || !key || !inst) return alert("Erro crítico: Infraestrutura de API não sincronizada. Configure no Neural Config.");
+                if(window.AuthSystem.currentUser?.instanceLocked) { url = window.AuthSystem.currentUser.evo_url; key = window.AuthSystem.currentUser.evo_key; inst = window.AuthSystem.currentUser.instanceName; } 
+                else { url = localStorage.getItem('evo_url'); key = localStorage.getItem('evo_key'); inst = localStorage.getItem('evo_inst'); }
+                if(!url || !key || !inst) return alert("API não sincronizada.");
                 const mainScript = document.getElementById('script-area').value;
                 const extraScripts = Array.from(document.querySelectorAll('#scripts-container textarea')).map(t => t.value);
                 const allScripts = [mainScript, ...extraScripts].filter(s => s && s.trim().length > 0);
@@ -797,8 +730,7 @@
                 const maxDelay = (parseInt(document.getElementById('delay-max').value) || 20) * 1000;
                 const btn = document.getElementById('btn-sender-start');
                 const originalText = btn.innerHTML;
-                btn.innerHTML = '<i data-lucide="square" class="w-4 h-4 fill-current"></i> INTERROMPER OPERAÇÃO';
-                btn.classList.add('stop-mode');
+                btn.innerHTML = 'INTERROMPER OPERAÇÃO'; btn.classList.add('stop-mode');
                 if(window.lucide) lucide.createIcons();
                 window.SenderTool.sending = true;
                 const cleanUrl = url.trim().replace(/\/$/, '').split('/message')[0];
@@ -807,33 +739,16 @@
                     while(window.SenderTool.sending) {
                         let currentLines = listArea.value.split('\n').filter(n => n.trim().length > 5);
                         if(!currentLines.length) break;
-                        let rawLine = currentLines[0];
-                        let parts = rawLine.split(';');
-                        let num = parts[0].trim().replace(/\D/g, '');
-                        let var1 = parts[1] ? parts[1].trim() : "Grupo";
-                        let var2 = parts[2] ? parts[2].trim() : "Membro";
+                        let rawLine = currentLines[0], parts = rawLine.split(';'), num = parts[0].trim().replace(/\D/g, ''), var1 = parts[1] || "Grupo", var2 = parts[2] || "Membro";
                         if(num.length >= 10) {
                             const msg = window.SenderTool.prepareMessage(allScripts, var1, var2);
-                            try {
-                                const response = await fetch(`${cleanUrl}/message/sendText/${inst}`, { method: 'POST', headers: { 'apikey': key, 'Content-Type': 'application/json' }, body: JSON.stringify({ number: num, text: msg, linkPreview: true }) });
-                                if(response.ok) { 
-                                    await DataCore.logSent(num, category); 
-                                    window.SenderTool.sessionCount++; 
-                                }
-                            } catch(e) { console.error(e); }
+                            try { const response = await fetch(`${cleanUrl}/message/sendText/${inst}`, { method: 'POST', headers: { 'apikey': key, 'Content-Type': 'application/json' }, body: JSON.stringify({ number: num, text: msg, linkPreview: true }) }); if(response.ok) { await DataCore.logSent(num, category); window.SenderTool.sessionCount++; } } catch(e) {}
                         }
-                        currentLines.shift();
-                        listArea.value = currentLines.join('\n');
-                        window.SenderTool.updateStats();
-                        if(currentLines.length > 0 && window.SenderTool.sending) {
-                            const waitTime = Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay);
-                            await window.Utils.wait(waitTime);
-                        }
+                        currentLines.shift(); listArea.value = currentLines.join('\n'); window.SenderTool.updateStats();
+                        if(currentLines.length > 0 && window.SenderTool.sending) await window.Utils.wait(Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay));
                     }
                 } finally {
-                    window.SenderTool.sending = false;
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('stop-mode');
+                    window.SenderTool.sending = false; btn.innerHTML = originalText; btn.classList.remove('stop-mode');
                     if(window.lucide) lucide.createIcons();
                 }
             }
@@ -858,13 +773,11 @@
             extract: () => {
                 const i = document.getElementById('group-list').value; if(i==="") return alert("Selecione um grupo.");
                 const g = window.ExtractorTool.cachedGroups[i]; let lines = [];
-                const groupName = g.subject.replace(/;/g, '');
                 g.participants.forEach(p => { 
                     let id = String(p.phoneNumber || p.id || "").split('@')[0].split(':')[0]; 
-                    if(id.startsWith('55') && id.length >= 12) lines.push(`${id};${groupName};Membro`); 
+                    if(id.startsWith('55') && id.length >= 12) lines.push(`${id};${g.subject.replace(/;/g,'')};Membro`); 
                 });
-                document.getElementById('target-list').value = lines.join('\n'); 
-                window.SenderTool.updateStats();
+                document.getElementById('target-list').value = lines.join('\n'); window.SenderTool.updateStats();
                 if(confirm(`${lines.length} extraídos! Ir para Disparador?`)) window.Navigation.enterPortal('sender');
             },
             updateRemarketingCount: async () => { 
@@ -879,33 +792,23 @@
                 const c = document.getElementById('remarketing-funnel-list').value; 
                 if(!c) return alert("Selecione um funil."); 
                 const btn = document.querySelector('[onclick="window.ExtractorTool.sendToSender()"]');
-                const originalText = btn.innerText;
-                btn.innerText = "RECUPERANDO DADOS...";
+                const originalText = btn.innerText; btn.innerText = "RECUPERANDO...";
                 const nums = await DataCore.getNumbersByCategory(c);
-                if(!nums.length) { alert("Nenhum histórico encontrado para este funil na nuvem."); btn.innerText = originalText; return; }
+                if(!nums.length) { alert("Nenhum histórico encontrado."); btn.innerText = originalText; return; }
                 document.getElementById('target-list').value = nums.map(n => `${n};Remarketing;Lid`).join('\n'); 
-                window.Navigation.enterPortal('sender'); 
-                window.SenderTool.updateStats();
-                btn.innerText = originalText;
+                window.Navigation.enterPortal('sender'); window.SenderTool.updateStats(); btn.innerText = originalText;
             }
         };
 
         window.ConfigSystem = {
             save: async () => {
                 const inst = document.getElementById('conf-inst').value;
-                const n8n = document.getElementById('conf-n8n').value;
-                
                 if(!inst) return alert("Digite o nome da instância.");
-                
-                // Salva Localmente
-                localStorage.setItem('lh_n8n', n8n);
-                localStorage.setItem('lh_inst', inst); // Backup local caso o usuário não tenha login
-                
+                localStorage.setItem('lh_inst', inst); 
                 try {
                     const globalDoc = await db.collection("settings").doc("global").get();
                     if(!globalDoc.exists) return alert("Erro crítico: API não definida.");
                     const globalData = globalDoc.data();
-                    
                     if(window.AuthSystem.currentUser) {
                         const uid = window.AuthSystem.currentUser.uid;
                         await db.collection('users').doc(uid).update({ instanceName: inst, instanceLocked: true, evo_url: globalData.url, evo_key: globalData.key });
@@ -914,16 +817,49 @@
                         window.AuthSystem.currentUser.evo_url = globalData.url;
                         window.AuthSystem.currentUser.evo_key = globalData.key;
                     }
-                    alert("Sincronizado!");
-                    window.ConfigSystem.load();
+                    alert("Sincronizado!"); window.ConfigSystem.load();
                 } catch(e) { alert("Erro: " + e.message); }
             },
             load: () => {
                 const u = window.AuthSystem.currentUser;
-                document.getElementById('conf-n8n').value = localStorage.getItem('lh_n8n') || '';
                 document.getElementById('conf-inst').value = (u?.instanceLocked ? u.instanceName : localStorage.getItem('evo_inst')) || '';
                 if(u?.instanceLocked) { document.getElementById('conf-inst').disabled = true; document.getElementById('lock-icon').classList.remove('hidden'); }
             }
+        };
+
+        window.AuthSystem = {
+            currentUser: null,
+            init: () => {
+                const cfg = window.Utils.decodeConfig(); firebase.initializeApp(cfg); db = firebase.firestore();
+                let width = 0; const bar = document.getElementById('boot-bar');
+                const interval = setInterval(() => { width += 2; bar.style.width = Math.min(width, 100) + '%'; if(width>=100) { clearInterval(interval); setTimeout(()=>window.Navigation.switchScreen('auth-screen'),500); DataCore.refreshUI(); } }, 30); 
+            },
+            toggleForms: () => { document.getElementById('login-form').classList.toggle('hidden'); document.getElementById('register-form').classList.toggle('hidden'); },
+            login: async () => {
+                const email = document.getElementById('loginEmail').value, pass = document.getElementById('loginPass').value;
+                const btn = document.getElementById('btn-login-action'); btn.innerHTML = "VERIFICANDO..."; await window.Utils.wait(1000);
+                try {
+                    const snap = await db.collection("users").where("email","==",email).where("password","==",pass).get();
+                    if(snap.empty) { btn.innerHTML = "ENTRAR"; return alert("Acesso negado."); }
+                    const u = snap.docs[0].data();
+                    if(!u.active) { document.getElementById('login-form').classList.add('hidden'); document.getElementById('renewal-block').classList.remove('hidden'); return; }
+                    window.AuthSystem.currentUser = u; window.Navigation.switchScreen('intro-chat'); window.IntroSystem.start(); window.ConfigSystem.load();
+                } catch(e) { btn.innerHTML = "ENTRAR"; alert("Erro: "+e.message); }
+            },
+            logout: () => window.location.reload(),
+            register: async () => {
+                const name = document.getElementById('regName').value, email = document.getElementById('regEmail').value, pass = document.getElementById('regPass').value;
+                if (!name || !email || !pass) return alert("Preencha tudo.");
+                const btn = document.querySelector('#register-form button'); btn.innerHTML = "PROCESSANDO..."; btn.disabled = true;
+                try {
+                    const checkSnapshot = await db.collection("users").where("email", "==", email).get();
+                    if (!checkSnapshot.empty) { alert("Email já em uso."); return; }
+                    const uid = "user_" + window.Utils.generateId();
+                    await db.collection("users").doc(uid).set({ uid, name, email, password: pass, active: true, createdAt: new Date().toISOString() });
+                    alert("Sucesso!"); window.AuthSystem.toggleForms();
+                } catch (e) { alert("Erro: " + e.message); } finally { btn.innerHTML = "CADASTRAR"; btn.disabled = false; }
+            },
+            promptAdmin: () => { if(prompt("ACCESS:")==='adminsamuel') window.AdminSystem.open(); }
         };
 
         window.AdminSystem = {
@@ -942,10 +878,7 @@
                 c.innerHTML='<div class="text-green-500 font-mono mb-4">> Handshaking with Neural Core...</div>'; 
                 await window.Utils.wait(800);
                 const m=["Establishing encrypted tunnel... [OK]", "Validating elite credentials... [OK]", "Loading God Mode Protocol... [COMPLETE]"]; 
-                for(let t of m){ 
-                    c.innerHTML += `<div class="text-gray-300 font-mono mb-2">> ${t}</div>`;
-                    await window.Utils.wait(400); 
-                } 
+                for(let t of m){ c.innerHTML += `<div class="text-gray-300 font-mono mb-2">> ${t}</div>`; await window.Utils.wait(400); } 
                 document.getElementById('chat-actions').classList.add('opacity-100'); 
             } 
         };
@@ -956,12 +889,7 @@
                 const canvas = document.getElementById('starfield-canvas');
                 window.StarfieldSystem.canvas = canvas;
                 window.StarfieldSystem.ctx = canvas.getContext('2d');
-                const resize = () => { 
-                    canvas.width = window.innerWidth; 
-                    canvas.height = window.innerHeight; 
-                    window.StarfieldSystem.centerX = canvas.width / 2;
-                    window.StarfieldSystem.centerY = canvas.height / 2;
-                };
+                const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; window.StarfieldSystem.centerX = canvas.width / 2; window.StarfieldSystem.centerY = canvas.height / 2; };
                 window.addEventListener('resize', resize); resize();
                 const count = window.StarfieldSystem.starCount;
                 window.StarfieldSystem.starsData = new Float32Array(count * 4); 
@@ -971,82 +899,38 @@
                     window.StarfieldSystem.starsData[idx] = Math.random() * canvas.width - window.StarfieldSystem.centerX;
                     window.StarfieldSystem.starsData[idx+1] = Math.random() * canvas.height - window.StarfieldSystem.centerY;
                     window.StarfieldSystem.starsData[idx+2] = (Math.random() * canvas.width) + 1; 
-                    window.StarfieldSystem.starsData[idx+3] = 0;
                     window.StarfieldSystem.starColors[i] = Math.random() > 0.8 ? 1 : 0;
                 }
                 window.StarfieldSystem.animate();
             },
-            startWarp: () => { window.StarfieldSystem.isWarping = true; },
-            stopWarp: () => { window.StarfieldSystem.isWarping = false; },
+            startWarp: () => window.StarfieldSystem.isWarping = true,
+            stopWarp: () => window.StarfieldSystem.isWarping = false,
             animate: () => {
-                const sys = window.StarfieldSystem;
-                const ctx = sys.ctx;
-                const canvas = sys.canvas;
-                const data = sys.starsData;
-                const colors = sys.starColors;
-                const count = sys.starCount;
+                const sys = window.StarfieldSystem; const ctx = sys.ctx; const canvas = sys.canvas; const data = sys.starsData; const colors = sys.starColors; const count = sys.starCount;
                 ctx.fillStyle = sys.isWarping ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 1)";
                 ctx.fillRect(0, 0, canvas.width, canvas.height); 
-                let targetSpeed = sys.isWarping ? 80 : 0.2;
-                sys.speed += (targetSpeed - sys.speed) * 0.02;
+                let targetSpeed = sys.isWarping ? 80 : 0.2; sys.speed += (targetSpeed - sys.speed) * 0.02;
                 if (sys.speed > 60 && sys.isWarping) { sys.warpFactor += 0.05; } else { sys.warpFactor *= 0.9; }
                 for (let i = 0; i < count; i++) {
-                    const idx = i * 4;
-                    data[idx+2] -= sys.speed;
-                    if (data[idx+2] <= 1) {
-                        data[idx+2] = canvas.width;
-                        data[idx] = Math.random() * canvas.width - sys.centerX;
-                        data[idx+1] = Math.random() * canvas.height - sys.centerY;
-                        data[idx+3] = data[idx+2];
-                    }
-                    const z = data[idx+2];
-                    const safeZ = Math.max(z, 0.1); 
-                    const x = (data[idx] / safeZ) * canvas.width + sys.centerX;
-                    const y = (data[idx+1] / safeZ) * canvas.height + sys.centerY;
-                    const pz = sys.isWarping ? (z + sys.speed * 2) : z; 
-                    const safePZ = Math.max(pz, 0.1); 
-                    const px = (data[idx] / safePZ) * canvas.width + sys.centerX;
-                    const py = (data[idx+1] / safePZ) * canvas.height + sys.centerY;
-                    const distanceScale = (1 - z / canvas.width);
-                    const size = Math.max(0, distanceScale * (sys.speed > 2 ? 3 : 2));
-                    ctx.beginPath();
-                    const isGold = colors[i] === 1;
-                    const colorStr = isGold ? '#D4AF37' : '#FFFFFF';
-                    if (sys.speed > 5) {
-                        ctx.strokeStyle = colorStr;
-                        ctx.lineWidth = size;
-                        ctx.globalAlpha = Math.max(0, Math.min(1, distanceScale)); 
-                        ctx.moveTo(px, py);
-                        ctx.lineTo(x, y);
-                        ctx.stroke();
-                    } else {
-                        ctx.fillStyle = colorStr;
-                        ctx.globalAlpha = Math.max(0, Math.min(1, distanceScale)); 
-                        ctx.arc(x, y, size/2, 0, Math.PI * 2);
-                        ctx.fill();
-                    }
+                    const idx = i * 4; data[idx+2] -= sys.speed;
+                    if (data[idx+2] <= 1) { data[idx+2] = canvas.width; data[idx] = Math.random() * canvas.width - sys.centerX; data[idx+1] = Math.random() * canvas.height - sys.centerY; }
+                    const z = data[idx+2]; const x = (data[idx] / z) * canvas.width + sys.centerX; const y = (data[idx+1] / z) * canvas.height + sys.centerY;
+                    const pz = z + sys.speed * 2; const px = (data[idx] / pz) * canvas.width + sys.centerX; const py = (data[idx+1] / pz) * canvas.height + sys.centerY;
+                    const distanceScale = (1 - z / canvas.width); const size = Math.max(0, distanceScale * (sys.speed > 2 ? 3 : 2));
+                    ctx.beginPath(); const colorStr = colors[i] === 1 ? '#D4AF37' : '#FFFFFF';
+                    if (sys.speed > 5) { ctx.strokeStyle = colorStr; ctx.lineWidth = size; ctx.globalAlpha = Math.max(0, Math.min(1, distanceScale)); ctx.moveTo(px, py); ctx.lineTo(x, y); ctx.stroke(); } 
+                    else { ctx.fillStyle = colorStr; ctx.globalAlpha = Math.max(0, Math.min(1, distanceScale)); ctx.arc(x, y, size/2, 0, Math.PI * 2); ctx.fill(); }
                 }
                 if (sys.warpFactor > 0.1) {
-                    const maxRadius = Math.min(canvas.width, canvas.height) * sys.warpFactor;
-                    const safeMaxRadius = Math.max(0, maxRadius);
-                    const grad = ctx.createRadialGradient(sys.centerX, sys.centerY, 0, sys.centerX, sys.centerY, safeMaxRadius);
-                    grad.addColorStop(0, "rgba(255, 255, 255, 1)");
-                    grad.addColorStop(0.4, "rgba(212, 175, 55, 0.5)");
-                    grad.addColorStop(1, "transparent");
-                    ctx.fillStyle = grad;
-                    ctx.globalAlpha = Math.min(1, sys.warpFactor);
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    const grad = ctx.createRadialGradient(sys.centerX, sys.centerY, 0, sys.centerX, sys.centerY, Math.min(canvas.width, canvas.height) * sys.warpFactor);
+                    grad.addColorStop(0, "white"); grad.addColorStop(0.4, "rgba(212, 175, 55, 0.5)"); grad.addColorStop(1, "transparent");
+                    ctx.fillStyle = grad; ctx.globalAlpha = Math.min(1, sys.warpFactor); ctx.fillRect(0, 0, canvas.width, canvas.height);
                 }
-                ctx.globalAlpha = 1;
-                requestAnimationFrame(sys.animate);
+                ctx.globalAlpha = 1; requestAnimationFrame(sys.animate);
             }
         };
 
-        window.onload = () => { 
-            window.AuthSystem.init(); 
-            if(window.lucide) lucide.createIcons();
-            window.StarfieldSystem.init();
-        };
+        window.onload = () => { window.AuthSystem.init(); if(window.lucide) lucide.createIcons(); window.StarfieldSystem.init(); };
     </script>
 </body>
 </html>
